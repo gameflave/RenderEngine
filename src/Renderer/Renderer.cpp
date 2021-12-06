@@ -8,7 +8,7 @@ Renderer::~Renderer()
 {
 }
 
-void Renderer::Draw(const OpenGL::VertexArray& va, const OpenGL::IndexBuffer& ib, const OpenGL::Shader& shader) const
+void Renderer::Draw(const OpenGLVertexArray& va, const OpenGLIndexBuffer& ib, const OpenGLShader& shader) const
 {
     va.Bind();
     ib.Bind();

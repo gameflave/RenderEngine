@@ -12,7 +12,7 @@ public:
     Renderer();
     ~Renderer();
 
-    void Draw(const OpenGL::VertexArray& va, const OpenGL::IndexBuffer& ib, const OpenGL::Shader& shader) const;
+    void Draw(const OpenGLVertexArray& va, const OpenGLIndexBuffer& ib, const OpenGLShader& shader) const;
     void Clear() const;
 };
 

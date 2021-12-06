@@ -15,9 +15,9 @@ namespace test {
         m_TranslationA(220, 240, 0),
         m_TranslationB(420, 240, 0)
     {
-        OpenGL::VertexBuffer vb(m_Positions, 4 * 4 * sizeof(float));
+        OpenGLVertexBuffer vb(m_Positions, 4 * 4 * sizeof(float));
         
-        OpenGL::VertexBufferLayout layout;
+        OpenGLVertexBufferLayout layout;
         layout.Push(GL_FLOAT, 2);
         layout.Push(GL_FLOAT, 2);    
         m_VA.AddBuffer(vb, layout);       
