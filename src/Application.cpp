@@ -16,8 +16,6 @@ int main(int argc, char *argv[])
 {
     Window window((unsigned int)1280, (unsigned int)720, "OpenGL");
 
-    Renderer renderer;
-
     test::Test* currentTest = nullptr;     
     test::TestMenu* testMenu = new test::TestMenu(currentTest);
     currentTest = testMenu;
@@ -33,7 +31,7 @@ int main(int argc, char *argv[])
         ImGui_ImplOpenGL3_NewFrame();
         ImGui::NewFrame();
 
-        renderer.Clear();
+        Renderer::Clear();
      
         if(currentTest)
         {

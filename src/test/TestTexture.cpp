@@ -52,7 +52,7 @@ namespace test {
 
         m_Shader.SetUniformMat4f("u_MVP", m_MVP);
         }
-        m_Renderer.Draw(m_VA, m_IB, m_Shader);
+        Renderer::Draw(m_VA, m_IB, m_Shader);
         {
         m_Shader.Bind();
 
@@ -61,7 +61,7 @@ namespace test {
 
         m_Shader.SetUniformMat4f("u_MVP", m_MVP);
         }
-        m_Renderer.Draw(m_VA, m_IB, m_Shader);
+        Renderer::Draw(m_VA, m_IB, m_Shader);
     }
     void TestTexture::OnImGuiRender()
     {

@@ -28,6 +28,5 @@ namespace test {
         OpenGLShader m_Shader;
         OpenGLTexture m_Texture;
         glm::vec3 m_TranslationA, m_TranslationB;
-        Renderer m_Renderer;
     };
 }

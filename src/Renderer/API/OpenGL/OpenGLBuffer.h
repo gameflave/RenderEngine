@@ -4,7 +4,7 @@
 #include "Renderer/Buffer.h"
 
 
-class OpenGLVertexBuffer : VertexBuffer{
+class OpenGLVertexBuffer : public VertexBuffer{
 public:
     OpenGLVertexBuffer(float* data, unsigned int size);
     ~OpenGLVertexBuffer();
@@ -16,7 +16,7 @@ private:
     unsigned int m_RendererId;
 };
 
-class OpenGLIndexBuffer : IndexBuffer{
+class OpenGLIndexBuffer : public IndexBuffer{
 public:
     OpenGLIndexBuffer(unsigned int* data, unsigned int count);
     ~OpenGLIndexBuffer();

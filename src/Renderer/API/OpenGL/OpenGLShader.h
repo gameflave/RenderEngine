@@ -9,12 +9,14 @@
 
 #include "glm/glm.hpp"
 
+#include "Renderer/Shader.h"
+
 struct OpenGLShaderProgramSource{
     std::string VertexSource;
     std::string FragmentSource;
 };
 
-class OpenGLShader
+class OpenGLShader : public Shader
 {  
 private:
     std::string m_FilePath;
@@ -24,9 +26,8 @@ public:
     OpenGLShader(const std::string& filePath);
     ~OpenGLShader();
 
-    void Bind() const;
-    void Unbind() const;
-
+    void Bind() const override;
+    void Unbind() const override;
     //Uniforms
     void SetUniform4f(const std::string& name, float, float, float, float);
     void SetUniform1i(const std::string& name, int value);

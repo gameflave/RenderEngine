@@ -6,14 +6,20 @@
 
 #include "API/OpenGL/OpenGL.h"
 
+enum class RendererAPI
+{
+    None = 0, OpenGL = 1
+};
+
 class Renderer
 {   
 public:
-    Renderer();
-    ~Renderer();
+    static void Draw(const OpenGLVertexArray& va, const OpenGLIndexBuffer& ib, const OpenGLShader& shader);
+    static void Clear();
 
-    void Draw(const OpenGLVertexArray& va, const OpenGLIndexBuffer& ib, const OpenGLShader& shader) const;
-    void Clear() const;
+    inline static RendererAPI GetAPI() { return s_RendererAPI; }
+private:
+    static RendererAPI s_RendererAPI;
 };
 
 
