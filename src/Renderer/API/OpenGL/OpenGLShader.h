@@ -18,10 +18,6 @@ struct OpenGLShaderProgramSource{
 
 class OpenGLShader : public Shader
 {  
-private:
-    std::string m_FilePath;
-    unsigned int m_RendererId;
-    mutable std::unordered_map<std::string, int> m_UniformLocationCache;
 public:
     OpenGLShader(const std::string& filePath);
     ~OpenGLShader();
@@ -38,4 +34,8 @@ private:
     unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
     
     unsigned int GetUniformLocation(const std::string& name) const;
+private:
+    std::string m_FilePath;
+    unsigned int m_RendererId;
+    mutable std::unordered_map<std::string, int> m_UniformLocationCache;
 };

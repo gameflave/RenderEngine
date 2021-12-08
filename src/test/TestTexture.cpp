@@ -17,9 +17,10 @@ namespace test {
     {
         OpenGLVertexBuffer vb(m_Positions, 4 * 4 * sizeof(float));
         
-        OpenGLVertexBufferLayout layout;
-        layout.Push(GL_FLOAT, 2);
-        layout.Push(GL_FLOAT, 2);    
+        BufferLayout layout = {
+            { ShaderDataType::Float2, "a_Position"},
+            { ShaderDataType::Float2, "a_TexCord"}
+        };
         m_VA.AddBuffer(vb, layout);       
 
         m_Shader.Bind();

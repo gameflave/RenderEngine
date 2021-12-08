@@ -4,7 +4,7 @@
 
 # Compiler settings - Can be customized.
 CC = g++
-CXXFLAGS = -std=c++20 -Wall -g -Isrc/vendor -Isrc
+CXXFLAGS = -std=c++20 -Wall -g3 -Isrc/vendor -Isrc
 LDFLAGS = -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGLEW 
 
 # Makefile settings - Can be customized.
