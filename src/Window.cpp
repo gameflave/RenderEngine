@@ -13,7 +13,7 @@ Window::Window(unsigned int width, unsigned int height, const std::string& title
         fprintf(stderr, "Error: glfwCreateWindow, w:%i h:%i t:%s\n", width, height, title);
     }
     
-    m_Contex = new OpenGL::OpenGLRenderContext(m_Window);
+    m_Contex = new OpenGLRenderContext(m_Window);
     m_Contex->Init();
 
     SetVSync(true);

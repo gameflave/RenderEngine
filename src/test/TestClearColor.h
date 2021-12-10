@@ -1,4 +1,4 @@
-#pragma onceS
+#pragma once
 
 #include "Test.h"
 #include "GL/glew.h"

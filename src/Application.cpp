@@ -1,16 +1,15 @@
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "Window.h"
+
 #include <iostream>
 
-#include "Renderer/Renderer.h"
-#include "Window.h"
+#include <GLFW/glfw3.h>
 
 #include "imgui/imgui.h"
 
+#include "Renderer/Renderer.h"
+
 #include "test/Test.h"
 #include "test/TestClearColor.h"
-#include "test/TestTexture.h"
-#include "test/TestBatchRendering.h"
 
 int main(int argc, char *argv[])
 {
@@ -21,8 +20,6 @@ int main(int argc, char *argv[])
     currentTest = testMenu;
 
     testMenu->RegisterTest<test::TestClearColor>("Clear Color");
-    testMenu->RegisterTest<test::TestTexture>("2D Texture");
-    testMenu->RegisterTest<test::TestBatchRendering>("Batch Rendering");
  
     //TODO event system
     while (!glfwWindowShouldClose(window.GetWindow()))

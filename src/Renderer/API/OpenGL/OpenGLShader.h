@@ -4,8 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <GL/glew.h>
 #include <unordered_map>
+#include <GL/glew.h>
 
 #include "glm/glm.hpp"
 
