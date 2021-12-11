@@ -1,38 +1,26 @@
 #pragma once
 
+#include <vector>
+#include <memory>
+
 #include <GL/glew.h>
 
 #include "OpenGLBuffer.h"
+#include "Renderer/VertexArray.h"
 
-class OpenGLVertexArray
+class OpenGLVertexArray : public VertexArray
 {
 public:
     OpenGLVertexArray();
-    ~OpenGLVertexArray();
+    ~OpenGLVertexArray() {}
 
-    void AddBuffer(const OpenGLVertexBuffer& vb, const BufferLayout& layout);
-
-    void Bind() const;
-    void Unbind() const;
+    virtual void Bind() const override;
+    virtual void Unbind() const override;
+    
+    virtual void AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer) override;
+    virtual void SetIndexBuffer(const std::shared_ptr<VertexBuffer>& indexBuffer) override;
 private:
+    std::vector<std::shared_ptr<VertexBuffer>> m_VertexBuffers;
+    std::shared_ptr<IndexBuffer> m_IndexBuffer;
     unsigned int m_RendererId;
 };
-
-static GLenum ShaderDataTypeToopenGLBaseType(ShaderDataType type)
-{
-    switch (type)
-    {
-    case ShaderDataType::Float:     return GL_FLOAT;
-    case ShaderDataType::Float2:    return GL_FLOAT;
-    case ShaderDataType::Float3:    return GL_FLOAT;
-    case ShaderDataType::Float4:    return GL_FLOAT;
-    case ShaderDataType::Mat3:      return GL_FLOAT;
-    case ShaderDataType::Mat4:      return GL_FLOAT;
-    case ShaderDataType::Int:       return GL_INT;
-    case ShaderDataType::Int2:      return GL_INT;
-    case ShaderDataType::Int3:      return GL_INT;
-    case ShaderDataType::Int4:      return GL_INT;
-    case ShaderDataType::Bool:      return GL_BOOL;
-    default: fprintf(stderr, "Error: Unknow ShaderDataType"); return 0;
-    }
-}
