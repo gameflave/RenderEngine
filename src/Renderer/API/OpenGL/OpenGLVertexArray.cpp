@@ -59,7 +59,7 @@ void OpenGLVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& ver
 
     m_VertexBuffers.push_back(vertexBuffer);
 }
-void OpenGLVertexArray::SetIndexBuffer(const std::shared_ptr<VertexBuffer>& indexBuffer)
+void OpenGLVertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer)
 {
     glBindVertexArray(m_RendererId);
     indexBuffer->Bind();
