@@ -1,21 +1,20 @@
 #pragma once
 
-#include <vector>
-#include <utility>
+#include <memory>
 
-enum class RendererAPI
-{
-    None = 0, OpenGL = 1
-};
+#include "Renderer/RendererAPI.h"
+#include "Renderer/RenderCommand.h"
 
 class Renderer
 {   
 public:
-    static void Clear();
+    static void BeginScene();
+    static void EndScene();
 
-    inline static RendererAPI GetAPI() { return s_RendererAPI; }
+    static void Submit(const std::shared_ptr<VertexArray>&);
+
+    inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 private:
-    static RendererAPI s_RendererAPI;
 };
 
 

@@ -20,10 +20,10 @@ class OpenGLShader : public Shader
 {  
 public:
     OpenGLShader(const std::string& filePath);
-    ~OpenGLShader();
+    virtual ~OpenGLShader() override;
 
-    void Bind() const override;
-    void Unbind() const override;
+    virtual void Bind() const override;
+    virtual void Unbind() const override;
     //Uniforms
     void SetUniform4f(const std::string& name, float, float, float, float);
     void SetUniform1i(const std::string& name, int value);

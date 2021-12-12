@@ -7,6 +7,7 @@
 #include "imgui/imgui.h"
 
 #include "Renderer/Renderer.h"
+#include "Renderer/RenderCommand.h"
 
 #include "test/Test.h"
 #include "test/TestClearColor.h"
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
         ImGui_ImplOpenGL3_NewFrame();
         ImGui::NewFrame();
 
-        Renderer::Clear();
+        RenderCommand::Clear();
      
         if(currentTest)
         {

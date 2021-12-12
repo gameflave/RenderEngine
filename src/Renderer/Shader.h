@@ -2,7 +2,8 @@
 
 #include <string>
 
-#include "Renderer.h"
+#include "Renderer/Renderer.h"
+#include "Renderer/RendererAPI.h"
 
 class Shader
 {
